@@ -1,8 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
+
+
+import { countryRegionReducer } from './country-region/state/country-region.reducer';
+import { environment } from 'src/environments/environment';
+import { CountryRegion } from './country-region/state/country-region.effects';
 
 @NgModule({
   declarations: [
@@ -10,7 +18,16 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    StoreModule.forRoot({
+      countryRegion: countryRegionReducer
+    }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production
+    }),
+    EffectsModule.forRoot([CountryRegion]),
   ],
   providers: [],
   bootstrap: [AppComponent]
