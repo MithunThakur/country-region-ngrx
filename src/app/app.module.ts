@@ -6,22 +6,21 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 
 
 import { countryRegionReducer } from './country-region/state/country-region.reducer';
 import { environment } from 'src/environments/environment';
 import { CountryRegion } from './country-region/state/country-region.effects';
 
+
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
     StoreModule.forRoot({
       countryRegion: countryRegionReducer
     }),

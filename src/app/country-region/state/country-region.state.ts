@@ -1,4 +1,4 @@
-export interface CountryList {
+export interface CountryRegionList {
     name: string
 }
 
@@ -12,9 +12,9 @@ export interface RegionDetails {
 }
 
 export interface CountryRegionState {
-    countryList: CountryList[],
+    countryList: CountryRegionList[],
     isCountrySelected: boolean,
-    region: string[],
+    region: CountryRegionList[],
     selectedRegion: string,
     selectedCountry: string,
     selectedCountryDetails: RegionDetails,
@@ -24,7 +24,7 @@ export interface CountryRegionState {
 export const initialState: CountryRegionState = {
     countryList: [],
     isCountrySelected: false,
-    region: ['europe', 'asia'],
+    region: [{name:'europe'}, {name:'asia'}],
     selectedRegion: '',
     selectedCountry: '',
     selectedCountryDetails: {

@@ -1,0 +1,7 @@
+<div class="form-group form-inline">
+    <label class="form-label float-start">{{dropDownLabel}}:</label>
+    <select #selectedOption class="form-select w-50" (change)="onOptionValueSelected(selectedOption.value)">
+        <option selected>Open this select menu</option>
+        <option *ngFor="let option of optionValueList | async">{{option.name | titlecase}}</option>
+    </select>
+</div>

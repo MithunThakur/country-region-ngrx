@@ -1,12 +1,8 @@
 <div class="row my-4 py-4 border border-3 m-0">
     <div class="col-md-6">
-       
+        <app-drop-down [optionValueList]="regionList$" (optionValueSelected)="regionSelected($event)" [dropDownLabel]="regionDropDownLable"></app-drop-down>
     </div>
     <div class="col-md-6">
-        <label class="form-label float-start">Country:</label>
-        <select #selectedCountry class="form-select w-50" (change)="countrySelected(selectedCountry.value)">
-            <option selected>Open this select menu</option>
-            <option *ngFor="let country of countryList$ | async">{{country.name}}</option>
-        </select>
+        <app-drop-down [optionValueList]="countryList$" (optionValueSelected)="countrySelected($event)" [dropDownLabel]="countryDropDownLable"></app-drop-down>
     </div>
 </div>

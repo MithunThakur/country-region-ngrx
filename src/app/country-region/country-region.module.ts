@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { SharedModule } from '../shared/shared.module';
+
 import { CountryRegionRoutingModule } from './country-region-routing.module';
 import { CountryRegionComponent } from './country-region.component';
 import { CountryRegionSelectionComponent } from './components/country-region-selection/country-region-selection.component';
@@ -15,7 +17,8 @@ import { CountryRegionDetailsComponent } from './components/country-region-detai
   ],
   imports: [
     CommonModule,
-    CountryRegionRoutingModule
+    CountryRegionRoutingModule,
+    SharedModule
   ]
 })
 export class CountryRegionModule { }
