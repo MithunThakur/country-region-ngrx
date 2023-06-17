@@ -8,7 +8,7 @@ export const countryRegionReducer = createReducer(
         return {
             ...state,
             isCountrySelected: action.isCountrySelected,
-            countryDetails: state.countryDetails.filter((countryData: any) => countryData.name === action.country)
+            country: action.country
         }
     }),
     on(regionSelection, (state, action) => {

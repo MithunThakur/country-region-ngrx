@@ -14,13 +14,16 @@ export class CountryRegionDetailsComponent implements OnInit {
 
   public countryDetails$!: Observable<CountryDetails[]>;
   public isCountrySelected$!: Observable<boolean>
+  public countryDetails!: CountryDetails;
 
   constructor(
     private store: Store<{ countryDetails: CountryRegionState }>
   ) { }
 
   ngOnInit(): void {
-    this.countryDetails$ = this.store.select(getCountryDetails);
+    this.store.select(getCountryDetails).subscribe((data: CountryDetails[]) => {
+      this.countryDetails = { ...data[0] };
+    });
     this.isCountrySelected$ = this.store.select(getCountryIsSelected);
   }
 
