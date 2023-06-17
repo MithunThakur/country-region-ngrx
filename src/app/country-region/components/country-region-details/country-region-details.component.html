@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12" *ngIf="isCountrySelected$ | async">
-        <table class="table table-bordered">
+        <table class="table table-bordered table-striped ">
             <tbody>
                 <tr>
                     <td>Name:</td>
@@ -20,7 +20,7 @@
                 </tr>
                 <tr>
                     <td>Flag:</td>
-                    <td><img [src]="selectedCountryDetails.flag " [alt]="selectedCountryDetails.name " /></td>
+                    <td><img class="w-25" [src]="selectedCountryDetails.flag " [alt]="selectedCountryDetails.name " /></td>
                 </tr>
             </tbody>
         </table>

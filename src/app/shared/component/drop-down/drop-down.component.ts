@@ -16,9 +16,6 @@ export class DropDownComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.optionValueList.subscribe((options: string[]) => {
-      console.log(options);
-    })
   }
 
   onOptionValueSelected(optionValue: string): void {

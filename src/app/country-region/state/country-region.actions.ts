@@ -17,6 +17,6 @@ export const regionSelection = createAction(
 );
 
 export const countryDetailsFetchSuccess = createAction(
-    '[Country Region Details] countryDetails & CountryList',
+    '[Country Region Details] countryDetails & CountryList success',
     props<{countryDetails: CountryDetails[], countryList: CountryList[]}>()
-)
+);
