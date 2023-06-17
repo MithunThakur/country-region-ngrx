@@ -1,14 +1,14 @@
-import { createReducer, on } from "@ngrx/store";
+import { State, createReducer, on } from "@ngrx/store";
 import { initialState } from './country-region.state';
 import { countryDetailsFetchSuccess, countrySelection, regionSelection } from "./country-region.actions";
-import { CountryDetails } from "../model/countryRegionDetails.model";
 
 export const countryRegionReducer = createReducer(
     initialState,
     on(countrySelection, (state, action) => {
         return {
             ...state,
-            countryDetails: state.countryDetails.filter((countryData: CountryDetails) => countryData.name === action.country)
+            isCountrySelected: action.isCountrySelected,
+            countryDetails: state.countryDetails.filter((countryData: any) => countryData.name === action.country)
         }
     }),
     on(regionSelection, (state, action) => {
@@ -20,6 +20,7 @@ export const countryRegionReducer = createReducer(
     on(countryDetailsFetchSuccess, (state, action) => {
         return {
             ...state,
+            countryList: action.countryList,
             countryDetails: action.countryDetails
         }
     })

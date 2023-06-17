@@ -6,7 +6,7 @@ import { CountryRegionService } from 'src/app/services/country-region.service';
 import { countryDetailsFetchSuccess, regionSelection } from './country-region.actions';
 import { switchMap, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
-import { CountryDetails, countryList } from '../model/countryRegionDetails.model';
+import { CountryDetails, CountryList } from '../model/countryRegionDetails.model';
 
 @Injectable()
 export class CountryRegion {
@@ -25,7 +25,7 @@ export class CountryRegion {
           .pipe(
             map((data) => {
               const countryDetails: CountryDetails[] = [];
-              const countryList: countryList[] = [];
+              const countryList: CountryList[] = [];
               data.forEach((countryData: any) => {
                 countryDetails.push({
                   name: countryData.name,

@@ -4,7 +4,7 @@ import { CountryRegionState } from '../../state/country-region.state';
 import { Observable, Subject, Subscription, catchError, takeUntil } from 'rxjs';
 import { getCountry, getCountryDetails, getRegion } from '../../state/country-region.selectors';
 import { countrySelection, regionSelection } from '../../state/country-region.actions';
-import { CountryDetails, countryList } from '../../model/countryRegionDetails.model';
+import { CountryDetails, CountryList } from '../../model/countryRegionDetails.model';
 
 @Component({
   selector: 'app-country-region-selection',
@@ -30,7 +30,7 @@ export class CountryRegionSelectionComponent implements OnInit {
   }
 
   countrySelected(selectedCountry: string): void {
-    this.store.dispatch(countrySelection({ country: selectedCountry }));
+    this.store.dispatch(countrySelection({ country: selectedCountry, isCountrySelected: true }));
   }
 
 

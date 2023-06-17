@@ -6,6 +6,6 @@ export interface CountryDetails {
     flag: any
 }
 
-export interface countryList { 
+export interface CountryList { 
     name: string
 }

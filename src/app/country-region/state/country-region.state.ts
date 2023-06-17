@@ -13,6 +13,7 @@ export interface RegionDetails {
 
 export interface CountryRegionState {
     countryList: CountryList[],
+    isCountrySelected: boolean,
     region: string[],
     selectedRegion: string,
     selectedCountry: string,
@@ -21,6 +22,7 @@ export interface CountryRegionState {
 
 export const initialState: CountryRegionState = {
     countryList: [],
+    isCountrySelected: false,
     region: ['europe', 'asia'],
     selectedRegion: '',
     selectedCountry: '',

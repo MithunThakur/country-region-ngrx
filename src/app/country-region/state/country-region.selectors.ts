@@ -14,3 +14,7 @@ export const getRegion = createSelector(getCountryRegion, (state) => {
 export const getCountryDetails = createSelector(getCountryRegion, (state) => {
     return state.countryDetails;
 });
+
+export const getCountryIsSelected = createSelector(getCountryRegion, (state) => {
+    return state.isCountrySelected;
+})
