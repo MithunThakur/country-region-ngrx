@@ -5,3 +5,7 @@ export interface CountryDetails {
     currencies: string[],
     flag: any
 }
+
+export interface countryList { 
+    name: string
+}

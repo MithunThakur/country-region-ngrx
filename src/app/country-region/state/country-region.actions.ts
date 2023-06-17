@@ -1,9 +1,9 @@
 import { createAction, props } from "@ngrx/store";
-import { CountryDetails } from "../model/countryRegionDetails.model";
+import { CountryDetails, countryList } from "../model/countryRegionDetails.model";
 
 export const countrySelection = createAction(
     '[Country Region Selection] selectCountry',
-    props<{country: string[]}>()
+    props<{country: string}>()
 );
 
 export const regionSelection = createAction(
@@ -13,5 +13,5 @@ export const regionSelection = createAction(
 
 export const countryDetailsFetchSuccess = createAction(
     '[Country Region Details] countryDetails',
-    props<{countryDetails: CountryDetails[]}>()
+    props<{countryDetails: CountryDetails[], countryList: countryList[]}>()
 )

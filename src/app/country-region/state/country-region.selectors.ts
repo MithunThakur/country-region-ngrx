@@ -4,7 +4,7 @@ import { CountryRegionState } from './country-region.state';
 const getCountryRegion = createFeatureSelector<CountryRegionState>('countryRegion');
 
 export const getCountry = createSelector(getCountryRegion, (state) => {
-    return state.country;
+    return state.countryList;
 });
 
 export const getRegion = createSelector(getCountryRegion, (state) => {
