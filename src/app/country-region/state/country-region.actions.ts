@@ -3,8 +3,13 @@ import { CountryDetails, CountryList } from "../model/countryRegionDetails.model
 
 export const countrySelection = createAction(
     '[Country Region Selection] selectCountry',
-    props<{country: string, isCountrySelected: boolean}>()
+    props<{selectedCountry: string, isCountrySelected: boolean}>()
 );
+
+export const filterCountryDetails = createAction(
+    '[Country Details] filterCountryDetails',
+    props<{selectedCountryDetails: CountryDetails}>
+)
 
 export const regionSelection = createAction(
     '[Country Region Selection] selectRegion',

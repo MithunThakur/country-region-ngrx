@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { CountryRegionState } from '../../state/country-region.state';
 import { Observable, Subject, Subscription, catchError, takeUntil } from 'rxjs';
 import { getCountry, getCountryDetails, getRegion } from '../../state/country-region.selectors';
-import { countrySelection, regionSelection } from '../../state/country-region.actions';
+import { countrySelection, filterCountryDetails, regionSelection } from '../../state/country-region.actions';
 import { CountryDetails, CountryList } from '../../model/countryRegionDetails.model';
 
 @Component({
@@ -30,7 +30,8 @@ export class CountryRegionSelectionComponent implements OnInit {
   }
 
   countrySelected(selectedCountry: string): void {
-    this.store.dispatch(countrySelection({ country: selectedCountry, isCountrySelected: true }));
+    this.store.dispatch(countrySelection({ selectedCountry, isCountrySelected: true }));
+    this.store.dispatch(filterCountryDetails());
   }
 
 
