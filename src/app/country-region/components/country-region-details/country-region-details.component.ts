@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { CountryRegionState } from '../../state/country-region.state';
+import { getCountryDetails } from '../../state/country-region.selectors';
+import { Observable } from 'rxjs';
+import { CountryDetails } from '../../model/countryRegionDetails.model';
 
 @Component({
   selector: 'app-country-region-details',
@@ -7,9 +12,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CountryRegionDetailsComponent implements OnInit {
 
-  constructor() { }
+  public countryDetails$!: Observable<CountryDetails[]>;
+
+  constructor(
+    private store: Store<{ countryDetails: CountryRegionState }>
+  ) { }
 
   ngOnInit(): void {
+    this.countryDetails$ = this.store.select(getCountryDetails);
   }
 
 }

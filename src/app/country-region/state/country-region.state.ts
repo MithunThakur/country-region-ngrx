@@ -7,19 +7,21 @@ export interface RegionDetails {
 }
 
 export interface CountryRegionState {
-    country: string,
+    country: string[],
     region: string[],
-    countryDetails: RegionDetails
+    selectedRegion: string,
+    countryDetails: RegionDetails[]
 }
 
 export const initialState: CountryRegionState = {
-    country: '',
+    country: [],
     region: ['europe', 'asia'],
-    countryDetails: {
+    selectedRegion: '',
+    countryDetails: [{
         name: '',
         capital: '',
         population: 0,
         currencies: [],
         flag: null
-    }
+    }]
 }

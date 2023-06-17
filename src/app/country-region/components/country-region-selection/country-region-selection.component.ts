@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { CountryRegionState } from '../../state/country-region.state';
 import { Observable, Subject, Subscription, catchError, takeUntil } from 'rxjs';
@@ -10,40 +10,24 @@ import { regionSelection } from '../../state/country-region.actions';
   templateUrl: './country-region-selection.component.html',
   styleUrls: ['./country-region-selection.component.scss']
 })
-export class CountryRegionSelectionComponent implements OnInit, OnDestroy {
+export class CountryRegionSelectionComponent implements OnInit {
 
-  public regionList: any[] = [];
-  public regionValue: string = '';
+  public regionList$!: Observable<string[]>;
+  public countrylist$!: Observable<string[]>;
 
-  private regionListSubscription: Subject<boolean> = new Subject<boolean>();
-
-  constructor(
+    constructor(
     private store: Store<{ countryRegion: CountryRegionState }>
   ) { }
 
   ngOnInit(): void {
-    this.store.select(getRegion)
-      .pipe(
-        takeUntil(this.regionListSubscription)
-      )
-      .subscribe((data: string[]) => {
-        data.forEach((region: string) => {
-          this.regionList.push({
-            name: region,
-            value: region
-          })
-        })
-      });
+    this.regionList$ = this.store.select(getRegion);
 
   }
 
-  regionSelected(): void {
-    this.store.dispatch(regionSelection({ region: this.regionValue }))
+  regionSelected(selectedRegionVal: string): void {
+    this.store.dispatch(regionSelection({ region: selectedRegionVal }));
   }
 
-  ngOnDestroy(): void {
-    this.regionListSubscription.next(true);
-    this.regionListSubscription.complete();
-  }
+
 
 }

@@ -1,10 +1,10 @@
 <div class="row my-4 py-4 border border-3 m-0">
     <div class="col-md-6">
         <label class="form-label float-start">Region:</label>
-        <select class="form-select w-50" (change)="regionSelected()" [(ngModel)]="regionValue">
+        <select #selectedRegion class="form-select w-50" (change)="regionSelected(selectedRegion.value)">
             <option selected>Select Region</option>
-            <option *ngFor="let region of regionList">{{region | titlecase }}</option>
-          </select>
+            <option *ngFor="let region of regionList$ | async">{{region | titlecase }}</option>
+        </select>
     </div>
     <div class="col-md-6">
         <label class="form-label float-start">Country:</label>
@@ -13,6 +13,6 @@
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
-          </select>
+        </select>
     </div>
 </div>
