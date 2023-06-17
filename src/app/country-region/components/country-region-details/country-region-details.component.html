@@ -4,23 +4,23 @@
             <tbody>
                 <tr>
                     <td>Name:</td>
-                    <td>{{countryDetails.name}}</td>
+                    <td>{{selectedCountryDetails.name }}</td>
                 </tr>
                 <tr>
                     <td>Capital:</td>
-                    <td>{{countryDetails.capital}}</td>
+                    <td>{{selectedCountryDetails.capital }}</td>
                 </tr>
                 <tr>
                     <td>Population:</td>
-                    <td>{{countryDetails.population}}</td>
+                    <td>{{selectedCountryDetails.population }}</td>
                 </tr>
                 <tr>
                     <td>Currencies:</td>
-                    <td>{{countryDetails.currencies}}</td>
+                    <td>{{selectedCountryDetails.currencies[0].name }}</td>
                 </tr>
                 <tr>
                     <td>Flag:</td>
-                    <td><img [src]="countryDetails.flag" [alt]="countryDetails.name" /></td>
+                    <td><img [src]="selectedCountryDetails.flag " [alt]="selectedCountryDetails.name " /></td>
                 </tr>
             </tbody>
         </table>

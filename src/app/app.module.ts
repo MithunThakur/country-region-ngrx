@@ -12,12 +12,10 @@ import { FormsModule } from '@angular/forms';
 import { countryRegionReducer } from './country-region/state/country-region.reducer';
 import { environment } from 'src/environments/environment';
 import { CountryRegion } from './country-region/state/country-region.effects';
-import { DropdownComponent } from './common/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DropdownComponent
   ],
   imports: [
     BrowserModule,

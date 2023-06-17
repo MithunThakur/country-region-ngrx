@@ -13,7 +13,6 @@ export class CountryRegion {
 
   constructor(
     private actions$: Actions,
-    private store: Store<CountryRegionState>,
     private countryRegionService: CountryRegionService
   ) { }
 
@@ -26,7 +25,7 @@ export class CountryRegion {
             map((data) => {
               const countryDetails: CountryDetails[] = [];
               const countryList: CountryList[] = [];
-              data.forEach((countryData: any) => {
+              data.forEach((countryData: CountryDetails) => {
                 countryDetails.push({
                   name: countryData.name,
                   capital: countryData.capital,
