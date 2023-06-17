@@ -1,27 +1,19 @@
-# CountryRegionNgrx
+# Description - The Project Country Region used NGRX state management.
+#               In this application country-region module is ceated which has below components
+#               > country-region.component (acting as parent component)
+#               > country-region-selection (to select Region and Country value from drop down)
+#               > country-region-details.component (to showcase Country details in table)
+#               Shared module is created which has below component for reuseability purpose
+#               > drop-down.component (this is acting as common component which is created under shared module)
+#               country-region service which makes call to GET api
+#               state folder consist of below files
+#               > country-region.state (which holds initial state)
+#               > country-region.actions (countrySelection, filterCountryDetails, regionSelection, countryDetailsFetchSuccess)
+#               > country-region-reducer on(countrySelection, filterCountryDetails, regionSelection, countryDetailsFetchSuccess)
+#               > country-region.effects (regionSelection$)
+#               > couuntry-region-selectors (getCountry, getRegion, getCountryDetails, getCountryIsSelected, getSelectedCountryDetails)
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.11.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+# Installation - run - > npm install in command prompt
+#                         ng serve (assuming angular in installed)
